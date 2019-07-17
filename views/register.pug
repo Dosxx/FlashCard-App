@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content	
+	section.namecard
+		.namecard-hello
+			p.namecard-greeting Hello, student! Please Register.
+			form.namecard-exit(action='/login', method='GET')
+					button(type='submit') Sign in
+		|
+		form.namecard-form(action='/register', method='POST')
+			label.namecard-prompt
+				| Username:
+			input.namecard-name(type='text', name='username')
+			label.namecard-prompt
+				| First Name:
+			input.namecard-name(type='text', name='firstName')
+			label.namecard-prompt
+				| Last Name:
+			input.namecard-name(type='text', name='lastName')
+			label.namecard-prompt
+				| Email:
+			input.namecard-name(type='text', name='email', placeholder="name@email.com")
+			label.namecard-prompt
+				| Password:
+			input.namecard-name(type='password', name='password')
+			label.namecard-prompt
+				| Confirm Password:
+			input.namecard-name(type='password', name='confirmPassword')
+			button.namecard-submit(type='submit') Submit

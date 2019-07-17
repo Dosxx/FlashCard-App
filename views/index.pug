@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+	section.namecard
+		.namecard-hello
+			p.namecard-greeting Welcome, #{name}!
+			|
+			form.namecard-exit(action='/profile', method='GET')
+				button(type='submit') Profile
+			form.namecard-exit(action='/goodbye', method='POST')
+				button(type='submit') Sign out
+		|
+		h1.namecard-prompt Let's get started
+		|
+		a.namecard-submit(href='/cards') Begin!

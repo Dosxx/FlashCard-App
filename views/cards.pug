@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+	h2= text
+	if hint
+		P 
+		| i Hint: #{hint}
+	a(href=`${id}?side=${sideToShow}`)= sideToShowDisplay
+	br
+	a(href='/cards/') Next cards

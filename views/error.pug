@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+	section.desk
+	h1 #{error.message} - Status: #{error.status}
+	|
+	img.desk-items(src='/static/img/desk.svg')
+	|
+	- var code = error.status
+	case code
+		when 401
+			a.button-primary-small(href='/login') Go Home
+			.paper
+				pre= error.stack
+			|
+			.tear
+		default
+			a.button-primary-small(href='/register') Go Home
+			.paper
+				pre= error.stack
+			|
+			.tear

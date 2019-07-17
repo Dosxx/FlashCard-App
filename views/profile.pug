@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+	section.profile
+		.profile-container
+			.profile-header
+				h1.profile-title= title
+				|
+				form.profile-exit(action='/goodbye', method='POST')
+					button(type='submit') Log out
+				|
+			.profile-content
+				h2 Name: #{firstname} #{username} #{lastname}
+				|
+				form(action='/', method='GET')
+					button.profile-submit(type='submit') Close

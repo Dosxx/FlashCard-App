@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+	section.namecard
+		.namecard-hello
+			p.namecard-greeting Hello, student! Please log in.
+			form.namecard-exit(action='/register', method='GET')
+				button(type='submit') Register
+		|
+		form.namecard-form(action='/login', method='POST')
+			label.namecard-prompt
+				| Email:
+			input.namecard-name(type='text', name='email')
+			label.namecard-prompt
+				| Password:
+			input.namecard-name(type='password', name='password')
+			button.namecard-submit(type='submit') Log In

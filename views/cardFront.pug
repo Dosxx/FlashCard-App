@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+	section.namecard
+		.namecard-hello
+			form.namecard-exit(action='/goodbye', method='POST')
+				button(type='submit') Sign out
+		|
+	section.flashcards
+		.card.card-question
+			.card-header
+			|
+			h1.card-title Question
+			|
+			#content
+				h2= text
+				|
+				p#hint
+					i Hint: #{hint}
+			|
+			.card-flip-wrap
+				a(href=`${id}?side=${sideToShow}`)
+					img.card-flip(src='/static/img/flip.svg')
+			|
+			.card-next
+				a(href='/cards/')
+					img(src='/static/img/next.svg')
+		|
